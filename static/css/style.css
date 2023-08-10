@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Inter:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+/* GENİŞLEYEN KART */
+
+#genisleyenkart .panel{
+      background-size: auto 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 80vh;
+      border-radius: 50px;
+      cursor: pointer;
+      flex: 0.5;
+      margin: 10px;
+      position: relative;
+      transition: flex 0.7s ease-in;
+  }
+
+#genisleyenkart .panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin: 0px;
+    opacity: 0;
+}
+
+#genisleyenkart .panel.active{
+    flex: 5;
+}
+
+#genisleyenkart .panel.active h3 {
+    text-decoration: underline;
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 600px){
+    #genisleyenkart .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display: none;
+    }
+}
+
+/* İLERLEYEN ADIMLAR STEP WİZARD */
+:root{
+    --line-border-fill: #ff4d6d;
+    --line-border-empty: #dee2e6;
+}
+#ilerleyenadimlar{
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+#ilerleyenadimlar .progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    width: 350px;
+    max-width: 100%;
+}
+
+#ilerleyenadimlar .progress-container::before{
+    content: '';
+    background-color: var(--line-border-empty);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+#ilerleyenadimlar .progress{
+    background-color: var(--line-border-fill);
+    height: 4px;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    transition: 0.4s ease;
+}
+
+#ilerleyenadimlar .circle{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:1;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+}
+
+#ilerleyenadimlar .circle.active{
+    border-color: var(--line-border-fill);
+}
+
+#ilerleyenadimlar .btn{
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 24px;
+    font-size: 14px;
+    margin: 5px;
+}
+#ilerleyenadimlar .btn:active{
+    transform: scale(0.98);
+}
+
+#ilerleyenadimlar .btn:focus{
+    outline: 0;
+}
+
+#ilerleyenadimlar .btn:disabled{
+    background-color: var(--line-border-empty);
+}
