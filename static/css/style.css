@@ -20,6 +20,9 @@
   }
 
 #genisleyenkart .panel h3{
+    padding: 2px 10px 5px 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
     font-size: 24px;
     position: absolute;
     bottom: 20px;
@@ -33,7 +36,6 @@
 }
 
 #genisleyenkart .panel.active h3 {
-    text-decoration: underline;
     opacity: 1;
     transition: opacity 0.3s ease-in 0.4s;
 }
@@ -54,8 +56,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0px;
+    height: auto;
     overflow: hidden;
 }
 #ilerleyenadimlar .progress-container{
@@ -130,4 +131,73 @@
 
 #ilerleyenadimlar .btn:disabled{
     background-color: var(--line-border-empty);
+}
+
+/* Gizli Arama Widget */
+
+#gizliaramawidget .search {
+    position: relative;
+    height: 50px;
+  }
+  
+#gizliaramawidget .search .input {
+    font-family: inherit;
+    background-color: #fff;
+    border: 0;
+    font-size: 16px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+  }
+  
+  #gizliaramawidget .btn {
+    background-color: #fff;
+    color: #e52fb6;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  #gizliaramawidget .input:focus,
+  #gizliaramawidget .btn:focus {
+    outline: none;
+  }
+  
+  #gizliaramawidget .search.active .input {
+    width: 200px;
+  }
+  
+  #gizliaramawidget .search.active .btn {
+    transform: translateX(198px);
+  }
+
+
+  /* Bulanık Loading Ekranı */
+
+ #bulanikloading .bg {
+    /* background: no-repeat center/cover
+      url('https://wallpaperaccess.com/full/6549944.png'); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(0px);
+  }
+
+#bulanikloading .loading-text {
+    color: black;
+    font-size: 100px;
+  }
+
+#bulanikloading {
+    background-color: chartreuse;
 }

@@ -74,3 +74,43 @@ function update(){
         next.disabled = false;
     }
 }
+
+//Gizli Arama Widget
+
+const search = document.querySelector('#gizliaramawidget .search')
+const input = document.querySelector('#gizliaramawidget .input')
+const btn = document.querySelector('#gizliaramawidget .btn')
+
+btn.addEventListener('click', () => {
+  search.classList.toggle('active')
+  //input.focus()
+})
+
+
+//Bulanık Loading Ekranı
+
+const loadText = document.querySelector('#bulanikloading .loading-text')
+const bg = document.querySelector('#bulanikloading .bg')
+
+let load = 0
+
+let int = setInterval(bluring, 40)
+
+function bluring() { 
+  load++
+
+  if (load > 99) {
+    clearInterval(int)
+  }
+  //console.log(load)
+
+  loadText.innerText = `${load}%`
+  loadText.style.opacity = scale(load, 0, 110, 1, 0)
+  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+}
+
+function scale(number, inMin, inMax, outMin, outMax) {
+  return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin
+}
+
+
